@@ -5,6 +5,7 @@ const FolderService = require( './folder-service' )
 const folderRouter = express.Router()
 const jsonParser = express.json()
 
+// pull each piece of logic out of each route, all after .get, and put that all into a route file with a function for each route.
 folderRouter
 
   .route( '/folder' )
@@ -19,13 +20,12 @@ folderRouter
   } )
 
   .post( jsonParser, ( req, res, next ) => {
-    const { name : newFolder } = req.body
-
+    const { name : newFolderName } = req.body
+    // build a validator / sanitizer middlewear for this.
     FolderService.insertFolder(
       req.app.get( 'db' ),
-      newFolder
+      newFolderName
     )
-    res.folder = newFolder // save folder for next middlewear, and pass on to next
       .then( ( folder ) => {
         res
           .status( 201 )
@@ -37,7 +37,7 @@ folderRouter
 
 folderRouter
 
-  .route( 'folder/:folderId' )
+  .route( '/folder/:folderId' )
 
   .all( ( req, res, next ) => {
     FolderService.getFolderById(
@@ -62,17 +62,15 @@ folderRouter
   
   .patch( jsonParser, ( req, res, next ) => {
     const { name : newFolderName } = req.body
-   
     FolderService.updateFolderName(
       req.app.get( 'db' ),
-      req.params.folderId,
+      res.folder.id,
       newFolderName
     )
       .then( ( updatedFolder ) => {
         res
-          .status( 204 )
-          .json( updatedFolder )
-
+          .status( 200 )
+          .json( updatedFolder[0] )
       } )
       .catch( next )
   } )

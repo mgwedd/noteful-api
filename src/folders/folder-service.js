@@ -6,7 +6,7 @@ const FolderService = {
   },
   insertFolder( knex, newFolder ) {
     return knex
-      .insert( newFolder )
+      .insert( { name : newFolder } )
       .into( 'folders' )
       .returning( '*' )
       .then( ( rows ) => {
@@ -28,8 +28,7 @@ const FolderService = {
   updateFolderName( knex, id, newFolderName ) {
     return knex( 'folders' )
       .where( { id } )
-      .update( newFolderName )
-      .returning( '*' )
+      .update( { name : newFolderName }, '*' )
   },
 }
   
