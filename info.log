@@ -8,3 +8,12 @@
 {"message":{"message":"newFolder.then is not a function","error":{}},"timestamp":"2019-06-27T22:42:24.240Z","level":"error"}
 {"message":{"message":"insert into \"folders\" (\"0\", \"1\", \"10\", \"11\", \"12\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\") values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) returning * - column \"0\" of relation \"folders\" does not exist","error":{"name":"error","length":121,"severity":"ERROR","code":"42703","position":"24","file":"parse_target.c","line":"1033","routine":"checkInsertTargets"}},"timestamp":"2019-06-27T22:43:40.379Z","level":"error"}
 {"message":{"message":"insert into \"notes\" (\"content\", \"folderId\", \"name\") values ($1, $2, $3) returning * - column \"folderId\" of relation \"notes\" does not exist","error":{"name":"error","length":126,"severity":"ERROR","code":"42703","position":"33","file":"parse_target.c","line":"1033","routine":"checkInsertTargets"}},"timestamp":"2019-06-28T03:43:22.392Z","level":"error"}
+{"message":{"message":"FolderService.getFolderAndItsNotesById is not a function","error":{}},"timestamp":"2019-06-28T04:43:08.750Z","level":"error"}
+{"message":{"message":"FolderService.getFolderAndItsNotesById(...).then is not a function","error":{}},"timestamp":"2019-06-28T04:43:36.339Z","level":"error"}
+{"message":{"message":"folder is not defined","error":{}},"timestamp":"2019-06-28T04:52:10.847Z","level":"error"}
+{"message":{"message":"folder is not defined","error":{}},"timestamp":"2019-06-28T04:53:57.345Z","level":"error"}
+{"message":{"message":"folder is not defined","error":{}},"timestamp":"2019-06-28T04:54:01.697Z","level":"error"}
+{"message":{"message":"folder is not defined","error":{}},"timestamp":"2019-06-28T04:55:26.342Z","level":"error"}
+{"message":{"message":"folder is not defined","error":{}},"timestamp":"2019-06-28T04:59:30.266Z","level":"error"}
+{"message":{"message":"folder is not defined","error":{}},"timestamp":"2019-06-28T04:59:38.193Z","level":"error"}
+{"message":"Folder with id 3 not found","level":"error"}

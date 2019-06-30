@@ -1,6 +1,7 @@
 const express = require( 'express' )
 const path = require( 'path' )
 const FolderService = require( './folder-service' )
+const logger = require( '../logger' )
 
 const folderRouter = express.Router()
 const jsonParser = express.json()
@@ -46,8 +47,9 @@ folderRouter
     )
       .then( ( folder ) => {
         if ( !folder ) {
+          logger.error( `Folder with id ${req.params.folderId} not found` )
           return res.status( 404 ).json( {
-            error : { message : 'Folder doesn\'t exist' }
+            error : { message : 'Folder not found.' }
           } )
         }
         res.folder = folder // save folder for next middlewear, and pass on to next
@@ -57,20 +59,37 @@ folderRouter
   } )
 
   .get( ( req, res, next ) => {
-    res.json( res.folder )
+    // res.json( res.folder )
+
+    FolderService.getNotesForFolder(
+      req.app.get( 'db' ), 
+      res.folder.id
+    )
+      .then( ( notes ) => {
+        if ( !notes ) {
+          return res.status( 404 ).json( {
+            error : { message : 'Cannot find any notes for that folder' }
+          } )
+        }
+        const folder = res.folder
+        res.json( { folder, notes } )
+        next()
+      } )
   } )
   
   .patch( jsonParser, ( req, res, next ) => {
     const { name : newFolderName } = req.body
+   
     FolderService.updateFolderName(
       req.app.get( 'db' ),
-      res.folder.id,
+      req.params.folderId,
       newFolderName
     )
       .then( ( updatedFolder ) => {
         res
-          .status( 200 )
-          .json( updatedFolder[0] )
+          .status( 204 )
+          .json( updatedFolder )
+
       } )
       .catch( next )
   } )
