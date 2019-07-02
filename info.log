@@ -17,3 +17,13 @@
 {"message":{"message":"folder is not defined","error":{}},"timestamp":"2019-06-28T04:59:30.266Z","level":"error"}
 {"message":{"message":"folder is not defined","error":{}},"timestamp":"2019-06-28T04:59:38.193Z","level":"error"}
 {"message":"Folder with id 3 not found","level":"error"}
+{"message":"Unauthorized request to path: /api/note. API TOKEN: 1db06954-6279-447e-89aa-4dd7173ae4d4 and AUTH TOKEN: undefined","level":"error"}
+{"message":"Unauthorized request to path: /api/folder. API TOKEN: 1db06954-6279-447e-89aa-4dd7173ae4d4 and AUTH TOKEN: undefined","level":"error"}
+{"message":"Unauthorized request to path: /api/note. API TOKEN: 1db06954-6279-447e-89aa-4dd7173ae4d4 and AUTH TOKEN: undefined","level":"error"}
+{"message":"Unauthorized request to path: /api/folder. API TOKEN: 1db06954-6279-447e-89aa-4dd7173ae4d4 and AUTH TOKEN: undefined","level":"error"}
+{"message":"Unauthorized request to path: /api/note. API TOKEN: 1db06954-6279-447e-89aa-4dd7173ae4d4 and AUTH TOKEN: undefined","level":"error"}
+{"message":"Unauthorized request to path: /api/folder. API TOKEN: 1db06954-6279-447e-89aa-4dd7173ae4d4 and AUTH TOKEN: undefined","level":"error"}
+{"message":"Unauthorized request to path: /api/note. API TOKEN: 1db06954-6279-447e-89aa-4dd7173ae4d4 and AUTH TOKEN: undefined","level":"error"}
+{"message":"Unauthorized request to path: /api/folder. API TOKEN: 1db06954-6279-447e-89aa-4dd7173ae4d4 and AUTH TOKEN: undefined","level":"error"}
+{"message":"Unauthorized request to path: /api/note. API TOKEN: 1db06954-6279-447e-89aa-4dd7173ae4d4 and AUTH TOKEN: undefined","level":"error"}
+{"message":"Unauthorized request to path: /api/folder. API TOKEN: 1db06954-6279-447e-89aa-4dd7173ae4d4 and AUTH TOKEN: undefined","level":"error"}
