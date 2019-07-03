@@ -38,7 +38,7 @@ noteRouter
       newNote.content = content
     }
 
-    // build a validator / sanitizer middlewear for this.
+    // build a validator / sanitizer middlewear for this asap.
     NoteService.insertNote(
       req.app.get( 'db' ),
       newNote

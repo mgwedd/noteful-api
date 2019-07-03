@@ -15,5 +15,3 @@ INSERT INTO folders ( name )
         ('Product'), 
         ('Jokes'), 
         ('Secrets');
-
-

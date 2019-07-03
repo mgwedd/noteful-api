@@ -87,7 +87,7 @@ folderRouter
     )
       .then( ( updatedFolder ) => {
         res
-          .status( 204 )
+          .status( 200 )
           .json( updatedFolder )
 
       } )
