@@ -7,9 +7,10 @@
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
     "migrate": "postgrator --config postgrator-config.js",
+    "migrate-prod": "postgrator --config postgrator-prod-config.js",
     "debug": "ndb src/server.js",
     "test": "mocha --require test/setup.js",
-    "predeploy": "npm audit",
+    "predeploy": "npm audit && npm run migrate-prod",
     "deploy": "git push heroku master"
   },
   "keywords": [],
