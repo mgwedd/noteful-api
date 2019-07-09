@@ -10,8 +10,7 @@ Complete the following steps to implement the project:
 3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
 4. Install the node dependencies `npm i`
 5. Move the example Environment file `example.env` to `.env`, which will be ignored by git and read by the express server `mv example.env .env`. Adjust those environment variables as needed.
-6. Create a postgres database called `noteful` and alter the `.env` file's variables to declare the environment variables postgrator requires for running migrations. They're listed in `postgrator-config.js`. 
-7. Edit the contents of the `package.json` to use Noteful API instead of `"name": "express-boilerplate",`
+6. Run `npm run migrate` to set up the db
 
 ## Scripts
 
