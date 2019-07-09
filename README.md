@@ -1,5 +1,5 @@
 # Noteful API
-A node/express API server as well as postgres database migrations and seeding files to support my [Noteful React client](https://github.com/mgwedd/noteful) 
+A node/express API server as well as postgres database migrations and seeding files to support my **[Noteful React client](https://github.com/mgwedd/noteful)**
 
 ## Dev Setup
 
