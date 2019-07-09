@@ -1,7 +1,7 @@
 # Noteful API
-A node/express API server as well as postgres database migrations and seeding files to support my Noteful React client. 
+A node/express API server as well as postgres database migrations and seeding files to support my [Noteful React client](https://github.com/mgwedd/noteful) 
 
-## Set up
+## Dev Setup
 
 Complete the following steps to implement the project:
 
@@ -15,11 +15,11 @@ Complete the following steps to implement the project:
 
 ## Scripts
 
-Start the app: `npm start`
+Start the server: `npm start`
 
-Start nodemon for the app: `npm run dev`
+Start the server with nodemon (recommended): `npm run dev`
 
-Run migration scripts: `npm run migration`
+Run migration scripts: `npm run migration` (dev) or `npm run migration-prod` (prod)
 
 Run tests: `npm test`
 
@@ -28,3 +28,11 @@ Run debugger: `npm debug`
 ## Deploying
 
 When the new project is ready for deployment, add a new Heroku app with `heroku create`. This will make a new git remote called "heroku". Then `npm run deploy`, which will push to this remote's master branch after auditing your packages (a predeploy script).
+
+To deploy the database to production:
+1. `heroku create`
+2. `heroku addons:create heroku-postgresql:hobby-dev`
+3. `heroku pg:credentials:url` (copy configs to .env to satisfy the `postgrator-prod-config.js` requirements)
+4. `npm run migrate-prod`
+5. `npm run deploy`
+4. `npm run migrate-prod`
